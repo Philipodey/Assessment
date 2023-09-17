@@ -1,4 +1,4 @@
-package test;
+package tdd;
 
 public class Fuctions {
         public static int backToSender(int percentage, int amountPerParcel, int basePay) {

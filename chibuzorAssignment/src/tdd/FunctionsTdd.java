@@ -1,7 +1,6 @@
 package tdd;
 
 import org.junit.Test;
-import test.Fuctions;
 
 import static org.junit.Assert.assertEquals;
 

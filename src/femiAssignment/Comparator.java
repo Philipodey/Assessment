@@ -4,35 +4,24 @@ import java.util.Scanner;
 
 public class Comparator {
     public static void main(String[] args) {
-        int number = input("Enter a number: ");
-    }
-    public static int input(String prompt) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(prompt);
+
+        System.out.println("Enter a number: ");
         int number = scanner.nextInt();
         int greater = number;
-        int equal = number;
+
         int count = 1;
-        while (number != -1) {
-            if (number > greater) {
-                number = greater;
-                System.out.println(1);
-            } else if (number == equal) {
-                System.out.println(0);
-            }
-            System.out.println(prompt);
+
+            System.out.println("Enter a number: ");
             number = scanner.nextInt();
-            if (number > greater) {
-                number = greater;
-                System.out.println(1);
-            } else if (number < equal) {
+            if (greater < number) {
                 System.out.println(-1);
-            }
-            else {
+            } else if (number == greater) {
                 System.out.println(0);
+            } else{
+                System.out.println(1);
+
             }
-            count ++;
         }
-        return count;
     }
-}
+
