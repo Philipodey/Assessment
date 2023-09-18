@@ -57,12 +57,52 @@ public class MathsFunction {
 
     public static int factor(int number) {
         int factor = 0;
-        int
         for (int count = 1; count <= number ; count++) {
             if(number % count == 0){
                 factor ++;
             }
-
         }
+         return factor;
+    }
+
+    public static boolean square(int number) {
+        boolean squareNumber = true;
+        int square = 1;
+        int counter = 0;
+        for (int count = 0; count <= number; count++) {
+            if (count * count == number){
+                counter++;
+            }
+        }
+        if (counter == 1) {
+            return squareNumber;
+        }
+        return squareNumber;
+    }
+    public static boolean palindrome(int fiveDigitNumber){
+        boolean numberChange = true;
+        int reverse = 0;
+        int turnNumber = fiveDigitNumber;
+        while(fiveDigitNumber != 0) {
+           int digit = fiveDigitNumber % 10;
+           reverse = reverse * 10 + digit;
+           fiveDigitNumber /= 10;
+        }
+        if (turnNumber == reverse) {
+            return numberChange;
+        }
+        return numberChange;
+    }
+
+    public static int factorial(int number) {
+        boolean reverseNumber = true;
+        int factorial = 1;
+        int count = 1;
+        for (count = 1; count <= number ; count++) {
+            factorial = factorial * count;
+        }
+
+            return factorial;
     }
 }
+
