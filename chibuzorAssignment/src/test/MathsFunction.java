@@ -91,11 +91,12 @@ public class MathsFunction {
         if (turnNumber == reverse) {
             return numberChange;
         }
-        return numberChange;
+        else {
+            return false;
+        }
     }
 
     public static int factorial(int number) {
-        boolean reverseNumber = true;
         int factorial = 1;
         int count = 1;
         for (count = 1; count <= number ; count++) {

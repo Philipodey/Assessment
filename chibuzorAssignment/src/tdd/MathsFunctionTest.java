@@ -38,8 +38,8 @@ public class MathsFunctionTest {
     }
     @Test
     public  void testThatANumberIsAPalindrome(){
-       boolean palindrome = MathsFunction.palindrome(54145);
-       assertEquals(true, palindrome);
+       boolean palindrome = MathsFunction.palindrome(12345);
+       assertEquals(false, palindrome);
     }
 
     @Test
