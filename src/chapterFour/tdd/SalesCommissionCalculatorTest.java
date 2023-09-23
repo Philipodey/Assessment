@@ -1,11 +1,12 @@
-package tdd;
+package chapterFour.tdd;
 
+import chapterFour.main.SalesCommission;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class SalesCommissionCalculatorTdd {
+public class SalesCommissionCalculatorTest {
     @Test
     public void testGrossPercentage(){
         SalesCommission point = new SalesCommission(9,200, 5000, 650.00);

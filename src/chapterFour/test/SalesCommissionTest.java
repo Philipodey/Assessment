@@ -1,6 +1,6 @@
-package test;
+package chapterFour.test;
 
-import tdd.SalesCommission;
+import chapterFour.main.SalesCommission;
 
 import java.util.Scanner;
 

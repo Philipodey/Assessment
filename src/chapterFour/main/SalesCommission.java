@@ -1,4 +1,4 @@
-package tdd;
+package chapterFour.main;
 
 public class SalesCommission {
     private double grossPercentage;

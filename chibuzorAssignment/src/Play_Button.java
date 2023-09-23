@@ -1,0 +1,26 @@
+public class Play_Button {
+    public static void main(String[] args) {
+        int first = firstRow(7);
+        int columnFirst = firstColumn(7);
+    }
+    public static int firstRow(int number) {
+        for (int space = 0; space <= number; space++) {
+//            System.out.println(" ");
+            for (int row = 0; row > 1 - space; row--) {
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }
+        return number;
+    }
+    public static int firstColumn(int number){
+        for (int row = 0; row < number; row++) {
+//            System.out.println(" ");
+            for (int column = 0; column < 5-row ; column++) {
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }
+        return number;
+    }
+}
