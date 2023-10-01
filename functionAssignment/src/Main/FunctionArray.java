@@ -105,5 +105,24 @@ public class FunctionArray {
         }
         return sum;
     }
+    public static int sumOfNumberInAListWhileLoop(int[] number){
+        int sum = 0;
+        int count = 0;
+        while(count < number.length){
+            sum += number[count];
+            count++;
+        }
+        return sum;
+    }
+    public static int sumOfNumberInAListDoWhileLoop(int [] number){
+        int sum = 0;
+        int count = 0;
+        do {
+            sum += number[count];
+            count ++;
+
+        }while (count < number.length);
+            return sum;
+    }
 }
 

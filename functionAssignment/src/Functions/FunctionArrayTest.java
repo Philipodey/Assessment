@@ -63,7 +63,32 @@ public class FunctionArrayTest {
         assertArrayEquals(result,product);
 
     }
-    public void test
+    @Test
+    public void testThatNumbersElementsCanBeSummedForLoop(){
+        int [] numbers = {45,65,34,12,4,5};
+        int total = 165;
+        int result = FunctionArray.sumOfNumberInAList(numbers);
+        assertEquals(total,result);
+
+    }
+    @Test
+    public void testThatNumbersElementsCanBeSummedWhileLoop(){
+        int [] numbers = {45,65,34,12,4,5};
+        int total = 165;
+        int result = FunctionArray.sumOfNumberInAListWhileLoop(numbers);
+        assertEquals(total,result);
+
+    }
+    @Test
+    public void testThatNumbersElementsCanBeSummedDoWhileLoop(){
+        int [] numbers = {45,65,34,12,4,5};
+        int total = 165;
+        int result = FunctionArray.sumOfNumberInAListDoWhileLoop( numbers);
+        assertEquals(total,result);
+
+    }
+
+
 
 
     }
