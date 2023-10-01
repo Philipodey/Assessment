@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/chibuzorAssignment/chibuzorAssignment.iml" filepath="$PROJECT_DIR$/chibuzorAssignment/chibuzorAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/functionAssignment/functionAssignment.iml" filepath="$PROJECT_DIR$/functionAssignment/functionAssignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/myCodingProject.iml" filepath="$PROJECT_DIR$/myCodingProject.iml" />
     </modules>
   </component>
