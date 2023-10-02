@@ -3,6 +3,23 @@ package Main;
 import static java.util.Collections.addAll;
 
 public class FunctionArray {
+    public static void main(String[] args) {
+        int [] secondList = {1, 2, 4, 5};
+
+        int listTwo = secondList.length;
+        String [] newList = new String[list.length+secondList.length];
+        int counter = 0;
+        int count = 0;
+        for (count = 0; count < list.length; count++) {
+            for (counter = 0; counter < count; counter++) {
+                newList[count] = String.valueOf(list[counter]);
+            }
+        }
+        for (String s : secondList) {
+            newList[listTwo] = s;
+            listTwo++;
+        }
+    }
 
     public static int largest(int []number) {
         int largest = number[0];
@@ -80,23 +97,34 @@ public class FunctionArray {
         }
         return letter.contentEquals(reverse);
     }
-    public static String[] concatenateTwoList(String[] list, String [] secondList){
+    public static String[] concatenateTwoList(int[] list, String [] secondList){
         int listTwo = secondList.length;
         String [] newList = new String[list.length+secondList.length];
-        for (int count = 0; count < newList.length; count++) {
-            for (int counter = 0; counter < list.length; counter++) {
-                if (count == counter){
-                    newList[count] = list[counter];
-                }
-
+        for (int count = 0; count < list.length; count++) {
+            for (int counter = 0; counter <= count; counter++) {
+                     newList[count] = String.valueOf(list[counter]);
             }
         }
-        for (int count = 0; count < secondList.length ; count++) {
-            newList[listTwo] = secondList[count];
-            listTwo++;
-
+        for (String s : secondList) {
+            newList[listTwo] = s;
+            if (listTwo < newList.length - 1) listTwo++;
         }
         return newList;
+    }
+    public static String[] combineTwoListsAlternatively(int[] firstList, String [] secondlist){
+        String [] array = new String[firstList.length + secondlist.length];
+        int first = 0;
+        for (int number = 0; number < secondlist.length; number++){
+            array[first] = secondlist[number];
+            first += 2;
+        }
+        int second = 1;
+        for (int number = 0; number < firstList.length; number++){
+            array[second] = String.valueOf(firstList[number]);
+            if (second < array.length - 2) second += 2;
+            else second++;
+        }
+        return array;
     }
     public static int sumOfNumberInAList(int [] number){
         int sum = 0;
@@ -124,5 +152,6 @@ public class FunctionArray {
         }while (count < number.length);
             return sum;
     }
+
 }
 

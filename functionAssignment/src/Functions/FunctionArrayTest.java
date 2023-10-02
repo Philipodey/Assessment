@@ -56,10 +56,10 @@ public class FunctionArrayTest {
     }
     @Test
     public void testThatTwoLIstCanConcatenate(){
-        String []list1 = {"4","5","4"};
+        int []list1 = {4,5,4};
         String []secondList = {"r","a","t"};
         String [] result = FunctionArray.concatenateTwoList(list1,secondList);
-        String [] product = {"4","5","4","r","a","t"};
+        String [] product = {"4","5","4","r","a","t" };
         assertArrayEquals(result,product);
 
     }
@@ -87,6 +87,8 @@ public class FunctionArrayTest {
         assertEquals(total,result);
 
     }
+    @Test
+    public void testThat
 
 
 
