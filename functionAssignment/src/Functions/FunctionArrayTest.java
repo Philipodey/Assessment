@@ -88,7 +88,14 @@ public class FunctionArrayTest {
 
     }
     @Test
-    public void testThat
+    public void testThatListsCanCombineAlternatively(){
+        int [] numbers = {45,665,43};
+        String [] character = {"e","a","t"};
+        String [] combine = {"e","45","a","665","t","43"};
+        String[] outcome  = FunctionArray.combineTwoListsAlternatively(numbers,character);
+        assertArrayEquals(combine,outcome);
+
+    }
 
 
 

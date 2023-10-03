@@ -3,24 +3,24 @@ package Main;
 import static java.util.Collections.addAll;
 
 public class FunctionArray {
-    public static void main(String[] args) {
-        int [] secondList = {1, 2, 4, 5};
-
-        int listTwo = secondList.length;
-        String [] newList = new String[list.length+secondList.length];
-        int counter = 0;
-        int count = 0;
-        for (count = 0; count < list.length; count++) {
-            for (counter = 0; counter < count; counter++) {
-                newList[count] = String.valueOf(list[counter]);
-            }
-        }
-        for (String s : secondList) {
-            newList[listTwo] = s;
-            listTwo++;
-        }
-    }
-
+//    public static void main(String[] args) {
+//        int [] secondList = {1, 2, 4, 5};
+//
+//        int listTwo = secondList.length;
+//        String [] newList = new String[list.length+secondList.length];
+//        int counter = 0;
+//        int count = 0;
+//        for (count = 0; count < list.length; count++) {
+//            for (counter = 0; counter < count; counter++) {
+//                newList[count] = String.valueOf(list[counter]);
+//            }
+//        }
+//        for (String s : secondList) {
+//            newList[listTwo] = s;
+//            listTwo++;
+//        }
+//    }
+//
     public static int largest(int []number) {
         int largest = number[0];
         for (int count = 0; count < number.length; count++) {
