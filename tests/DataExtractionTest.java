@@ -38,6 +38,7 @@ public class DataExtractionTest {
         int row = 2;
         int startPosition = 2;
         int endPosition = 4;
-        int[] result = dataExtraction.extractByColumn(dataSet,row, startPosition, endPosition);
+        int column = 3;
+        int[] result = dataExtraction.extractByColumn(dataSet,row,column, startPosition, endPosition);
     }
 }

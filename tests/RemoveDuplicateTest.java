@@ -12,6 +12,9 @@ public class RemoveDuplicateTest {
         int[] uniqueValues = RemoveDuplicate.turnDuplicateToZero(numbers);
 //        Assert
         int[] result = {4,9,7,1};
-        assertEquals(result,numbers);
+        assertEquals(4,result[0]);
+        assertEquals(9,result[1]);
+        assertEquals(7,result[2]);
+        assertEquals(1,result[3]);
     }
 }

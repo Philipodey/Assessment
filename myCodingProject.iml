@@ -34,5 +34,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="chibuzorAssignment" scope="TEST" />
+    <orderEntry type="module" module-name="functionAssignment" scope="TEST" />
   </component>
 </module>
