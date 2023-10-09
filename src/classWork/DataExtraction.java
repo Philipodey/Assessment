@@ -40,13 +40,13 @@ public class DataExtraction {
         return extractedData;
     }
 
-    public int[] extractByColumn(int[][] dataSet, int column,int row, int startPosition, int endPosition) {
+    public int[] extractByColumn(int[][] dataSet, int column, int startPosition, int endPosition) {
         int[] extractedData = new int [(endPosition - startPosition) + 1];
-
-//        int[] columns = dataSet(row - 1)][column - 1];
-
-
-
+        int count = 0;
+        for (int index = startPosition - 1; index < endPosition ; index++) {
+            extractedData[count] = dataSet[index][column];
+            count++;
+        }
         return extractedData;
     }
 }

@@ -8,68 +8,61 @@ import static java.lang.String.*;
 
 public class CreditCardValidator {
     public static void main(String[] args) {
-        String[] cardNumber = {"4","3","8","8","5","7","6","0","1","8","4","0","2","6","2","6"};
-        calculateCardValidate(cardNumber);
+        String[] cardNumber = {"4","3","8","8","5","7","6","0","1","8","4","1","0","7","0","7"};
+        System.out.println(calculateCardValidate(cardNumber));
+        System.out.println(creditCardNumber(cardNumber));
     }
-    public static String[] creditCardNumber(String[] cardNumber) {
-        cardNumber = new String[cardNumber.length];
-        String [] cardNumberValue = null;
-        int count ;
-
-        for (count = 0; count < cardNumber.length; count++) {
+    public static String creditCardNumber(String[] cardNumber) {
+        String result = "";
             if(cardNumber.length >= 13 && cardNumber.length <= 16){
-                cardNumberValue = new String[]{Arrays.toString(cardNumber)};
+                if (Integer.parseInt(cardNumber[0]) == 4){
+                    result = "Visa card";
+                }
+                else if(Integer.parseInt(cardNumber[0]) == 5){
+                    result = "MasterCard";
+                } else if (Integer.parseInt(cardNumber[0]) == 3 && Integer.parseInt(cardNumber[1]) == 7) {
+                    result = "American Express Card";
+                } else if (Integer.parseInt(cardNumber[0]) == 6) {
+                    result = "Discovery card";
+                }
             }
             else{
-                System.out.println("Invalid length");
+                result = "Invalid length";
             }
-            if (count - cardNumber.length == 4){
-                System.out.println("The card is a Visa card");
-            }
-            else if(count - cardNumber.length == 5){
-                System.out.println("The card is a MasterCard");
-            } else if (count - cardNumber.length == 37) {
-                System.out.println("The card is an American Express Card");
-            } else if (count - cardNumber.length == 6) {
-                System.out.println("Discovery card");
-            }
-        }
-
-        return cardNumberValue;
+        return result;
     }
-    public static boolean calculateCardValidate(String[] cardNumber){
-        cardNumber = new String[cardNumber.length];
+    public static String calculateCardValidate(String[] cardNumber){
         int oddMultiply ;
         int evenAdd = 0;
         int oddAdd = 0;
-        boolean valid= true;
 
-
-        for(int count = cardNumber.length-2; count > 1; count = count -2) {
-            oddMultiply = count * 2;
-            int digitAdd ;
+        int oddAddOne = 0;
+        int oddAddTwo = 0;
+        int digitAdd;
+        for(int count = cardNumber.length-2; count >= 0; count = count -2) {
+            oddMultiply = Integer.parseInt(cardNumber[count]) * 2;
             if (oddMultiply > 9) {
                 int digitOne = oddMultiply % 10;
                 int oddDivide = oddMultiply / 10;
-                int digitTwo = oddDivide % 10;
-                digitAdd = digitOne + digitTwo;
-                oddAdd = digitAdd + count;
+                digitAdd = digitOne + oddDivide;
+                oddAddOne += digitAdd ;
             }
-            else{
-                oddAdd += count;
+            else {
+                oddAddTwo += oddMultiply;
             }
+
         }
-            for (int counter = cardNumber.length-1; counter > 2; counter = counter - 2) {
-                evenAdd += counter;
+         oddAdd = oddAddOne + oddAddTwo;
+            for (int counter = cardNumber.length-1; counter >= 0; counter = counter - 2) {
+                evenAdd += Integer.parseInt(cardNumber[counter]);
             }
             int validateAdd = oddAdd + evenAdd;
-        System.out.println("The even add is "+evenAdd);
-            System.out.println("The validate add is "+validateAdd);
             if(validateAdd % 10 == 0){
-                return valid;
+                return "valid";
             }
-
-        return valid;
-
+            else {
+                return "Invalid";
+            }
     }
+
 }

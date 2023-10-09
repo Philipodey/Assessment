@@ -1,6 +1,7 @@
 import classWork.DataExtraction;
 import org.junit.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DataExtractionTest {
@@ -39,6 +40,8 @@ public class DataExtractionTest {
         int startPosition = 2;
         int endPosition = 4;
         int column = 3;
-        int[] result = dataExtraction.extractByColumn(dataSet,row,column, startPosition, endPosition);
+        int[] result = dataExtraction.extractByColumn(dataSet,column, startPosition, endPosition);
+        int [] expected = {37, 45, 90};
+        assertArrayEquals(result, expected);
     }
 }
