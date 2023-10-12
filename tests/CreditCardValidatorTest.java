@@ -8,16 +8,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CreditCardValidatorTest {
     @Test
     public void testThatTheNumberIsBetween13And16(){
-        String [] cardNumber = {"4","3","8","8","5","7","6","0","1","8","4","0","3","3"};
+        String cardNumber = "37885760184033";
         String expected = CreditCardValidator.creditCardNumber(cardNumber);
-        String result = "The card is a Visa card";
+        String result = "American Express Card";
         assertEquals(expected, result);
     }
     @Test
     public void testThatTheCardNumberValidity(){
-        String[] cardNumber = {"4","3","8","8","5","7","6","0","1","8","4","0","2","6","2","6"};
+        String cardNumber = "4388576018402626";
         String expected = CreditCardValidator.calculateCardValidate(cardNumber);
-        String result = "valid";
+        String result = "Invalid";
         assertEquals(expected,result);
     }
 }
