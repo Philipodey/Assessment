@@ -35,8 +35,20 @@ public class CheckOutAppMain {
             System.out.println("Add more items? ");
             String response = check.nextLine();
              String change = response.toLowerCase();
-            if (response.equals("no")){
-                keepShopping = false;}
+            if (change.equals("no")){
+                keepShopping = false;
+            }
+            while (!change.equals("yes")) {
+                System.out.println("Add more items? ");
+                response = check.nextLine();
+                change = response.toLowerCase();
+                if (response.equals("no")){
+                    keepShopping = false;
+                }
+            }
+
+
+
             count ++;
         } while (keepShopping);
         System.out.println("What is the cashier's name: ");
@@ -52,76 +64,84 @@ public class CheckOutAppMain {
                                LOCATION: 312 HERBERT MACAULAY WAY, SABO, LAGOS
                                TEL: 08019434223
                                DATE: %s
-                               CASHIER: Cashier's Name
+                               CASHIER: %s
                                Customer Name: Odey Philip
                                ==========================================================
-                                               ITEM    QTY     PRICE    TOTAL(NGN)
+                                     ITEM       QTY          PRICE           TOTAL(NGN)
                                ----------------------------------------------------------
-                """,date);
-        int totalGoodsPrice = 0;
+                """, date,cashierName);
+        double totalGoodsPrice = 0;
         for (int counts = 0; counts < count; counts++) {
               String goods = goodsToPurchaseList.get(counts);
               String pricePerUnit = pricePerUnitList.get(counts);
               String quantity = quantityList.get(counts);
               eachGoodsPrice = Integer.parseInt(quantity) * Integer.parseInt(pricePerUnit);
               totalGoodsPrice = totalGoodsPrice + eachGoodsPrice;
-              System.out.printf("\t\t\t\t\t%s\t\t%s\t\t%s\t\t\t%d\n",goods, pricePerUnit,quantity,eachGoodsPrice);
+              System.out.printf("\t\t\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%d\n",goods, pricePerUnit,quantity,eachGoodsPrice);
         }
-        int discountDivide = Integer.parseInt(discount) / 100;
-        int discountPrice = totalGoodsPrice * discountDivide;
-        int vat = (int) (totalGoodsPrice * (17.50 / 100));
-        int billTotal = (totalGoodsPrice + vat ) - discountPrice;
+//
+        double discountPrice = totalGoodsPrice * Integer.parseInt(discount)/100 ;
+//
+        double vat =  totalGoodsPrice * (17.50 / 100);
+        double billTotal = (double)totalGoodsPrice + vat  - (discountPrice);
         System.out.printf("""
                                -----------------------------------------------------------
-                                                Sub Total:      %d
+                                                Sub Total:      %.2f
                                                  Discount:      %s
-                                              VAT @ 17.50:      %d
+                                              VAT @ 17.50:      %.2f
                                ===========================================================
-                                               Bill Total:      %d
+                                               Bill Total:      %.2f
                                ===========================================================
-                                    THIS IS NOT A RECEIPT KINDLY PAY %d
+                                    THIS IS NOT A RECEIPT KINDLY PAY %.2f
                                ===========================================================
                 """,totalGoodsPrice, discountPrice, vat, billTotal,billTotal);
-
+        String letter = "";
         System.out.println("How much did the customer to you: ");
         String amountGivenToMe = check.nextLine();
-        String balance = String.valueOf(Integer.parseInt(amountGivenToMe) - billTotal);
-        System.out.printf("""
-                               SEMICOLON STORES
-                               MAIN BRANCH
-                               LOCATION: 312 HERBERT MACAULAY WAY, SABO, LAGOS
-                               TEL: 08019434223
-                               DATE: %s
-                               CASHIER: Cashier's Name
-                               Customer Name: Odey Philip
-                               ==========================================================
-                                               ITEM    QTY     PRICE    TOTAL(NGN)
-                               ----------------------------------------------------------
-                """,date);
+//        while (Integer.parseInt(amountGivenToMe));
+        while(Integer.parseInt(amountGivenToMe) < totalGoodsPrice){
+            System.out.println("How much did the customer to you: ");
+            amountGivenToMe = check.nextLine();
 
-        for (int counted = 0; counted < count; counted++) {
-            String goods = goodsToPurchaseList.get(counted);
-            String pricePerUnit = pricePerUnitList.get(counted);
-            String quantity = quantityList.get(counted);
-            eachGoodsPrice = Integer.parseInt(quantity) * Integer.parseInt(pricePerUnit);
-            totalGoodsPrice = totalGoodsPrice + counted;
-            System.out.printf("\t\t\t\t%s\t\t%s\t\t%s\t\t\t%d\n",goods, pricePerUnit,quantity,eachGoodsPrice);
         }
-        int vat1 = (int) (totalGoodsPrice * (17.50 / 100));
-        int billTotal1 = (totalGoodsPrice + vat) - discountPrice;
-        System.out.printf("""
-                               -----------------------------------------------------------
-                                                Sub Total:      %d
-                                                 Discount:      %s
-                                              VAT @ 17.50:      %d
-                               ===========================================================
-                                               Bill Total:      %d
-                                              Amount Paid:      %s
-                                                  Balance:      %s
-                               ===========================================================
-                                           THANKS FOR YOUR PATRONAGE
-                               ===========================================================
-                """,totalGoodsPrice, discountPrice, vat1, billTotal1, amountGivenToMe, balance);
+            System.out.printf("""
+                                   SEMICOLON STORES
+                                   MAIN BRANCH
+                                   LOCATION: 312 HERBERT MACAULAY WAY, SABO, LAGOS
+                                   TEL: 08019434223
+                                   DATE: %s
+                                   CASHIER: %s
+                                   Customer Name: Odey Philip
+                                   ==========================================================
+                                        ITEM        QTY          PRICE          TOTAL(NGN)
+                                   ----------------------------------------------------------
+                    """, date, cashierName);
 
+            for (int counted = 0; counted < count; counted++) {
+                String goods = goodsToPurchaseList.get(counted);
+                String pricePerUnit = pricePerUnitList.get(counted);
+                String quantity = quantityList.get(counted);
+                eachGoodsPrice = Integer.parseInt(quantity) * Integer.parseInt(pricePerUnit);
+                totalGoodsPrice = totalGoodsPrice + counted;
+                System.out.printf("\t\t\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%d\n", goods, pricePerUnit, quantity, eachGoodsPrice);
+            }
+            double vat1 = totalGoodsPrice * (17.50 / 100);
+            double billTotal1 = (totalGoodsPrice + vat) - discountPrice;
+            double balance = Integer.parseInt(amountGivenToMe) - billTotal;
+            System.out.printf("""
+                                   -----------------------------------------------------------
+                                                    Sub Total:      %.2f
+                                                     Discount:      %s
+                                                  VAT @ 17.50:      %.2f
+                                   ===========================================================
+                                                   Bill Total:      %.2f
+                                                  Amount Paid:      %s
+                                                      Balance:      %.2f
+                                   ===========================================================
+                                               THANKS FOR YOUR PATRONAGE
+                                   ===========================================================
+                    """, totalGoodsPrice, discountPrice, vat1, billTotal1, amountGivenToMe, balance);
+
+        }
     }
-}
+
