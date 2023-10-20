@@ -22,7 +22,29 @@ public class StudentGrade {
         int subjectConvert = Integer.parseInt(subjects);
 
         String [][] studentGrade = new String[studentConvert][subjectConvert];
-        heading(studentConvert,subjectConvert);
+//        heading(studentConvert,subjectConvert);
+        String[][] array = new String[studentConvert][subjectConvert];
+        int[][] convertArray = new int[studentConvert][subjectConvert];
+        int row = 0;
+        int column = 0;
+        for (row = 0; row < convertArray.length; row++) {
+            System.out.println("Entering score for student " + (row + 1) + "\n");
+            for (column = 0; column < convertArray[row].length; column++) {
+                System.out.print("Enter score for subject " + "\t" + (column + 1) + " : ");
+                array[row][column] = check.nextLine();
+                System.out.println("""
+                                       Saving >>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                       Saved successfully
+                        """);
+                while (!array[row][column].matches("\\d+")) {
+                    System.out.print("Score " + " " + (column + 1) + " : ");
+                    array[row][column] = check.nextLine();
+                }
+           ;     convertArray[row][column] = Integer.parseInt(array[row][column]);
+            }
+        }
+        tableHeading(studentConvert);
+        int[] total = scoreTotal(convertArray, row, column);
 
 
     }
@@ -33,57 +55,44 @@ public class StudentGrade {
         return check.nextLine();
     }
 
-    public static void heading(int studentsConvert, int subjectConvert) {
-        Scanner check = new Scanner(System.in);
-        String [][] array = new String[studentsConvert][subjectConvert];
-        int[][] convertArray = new int[studentsConvert][subjectConvert];
-            int row = 0;
-            int column = 0;
-        for (row = 0; row < convertArray.length; row++) {
-            System.out.println("Entering score for student " + (row + 1) + "\n");
-            for (column = 0; column < convertArray[row].length; column++) {
-                System.out.print("Enter score for subject "+ "\t" + (column + 1) + " : ");
-                array[row][column] = check.nextLine();
-                System.out.println("""
-                                      Saving >>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                      Saved successfully
-                       """);
-                while (!array[row][column].matches("\\d+")){
-                    System.out.print("Score " + " " + (column + 1) + " : ");
-                    array[row][column] = check.nextLine();
-                }
-                convertArray[row][column] = Integer.parseInt(array[row][column]);
-            }
-        }
-        System.out.printf("%-15s","Students");
+
+
+    public static void tableHeading(int studentsConvert) {
+        System.out.printf("%-15s", "Students");
         for (int heading = 0; heading < studentsConvert; heading++) {
-            System.out.printf("%-13s","SUB"+(heading+1));
+            System.out.printf("%-13s", "SUB" + (heading + 1));
         }
-        System.out.printf("%-13s%-12s%-12s","TOT","AVE","POS");
-        int total = 0;
+        System.out.printf("%-13s%-12s%-12s", "TOT", "AVE", "POS");
+    }
+    public static int[] scoreTotal(int[][] array, int row, int column) {
+        int[] total = new int[array.length];
         double average = 1;
         int count = 1;
         int position = 0;
         int largest = 0;
         int increaseLargest = 0;
         System.out.println();
-        for (int tableRow = 0; tableRow < convertArray.length; tableRow++) {
+        for (int tableRow = 0; tableRow < array.length; tableRow++) {
             System.out.println();
-            System.out.printf("%-15s","STUDENT"+(tableRow+1));
+            System.out.printf("%-15s", "Student" + (tableRow + 1));
 
-            for (int tableColumn = 0; tableColumn < convertArray[tableRow].length; tableColumn++) {
+            for (int tableColumn = 0; tableColumn < array[tableRow].length; tableColumn++) {
 
-                System.out.printf("%-13s",convertArray[tableRow][tableColumn]);
-                total += convertArray[tableRow][tableColumn];
-
+                System.out.printf("%-13s", array[tableRow][tableColumn]);
+                count = 0;
+                for(int rowTotal = 0; rowTotal < array[tableRow].length; rowTotal++) {
+                    total[count] += array[tableRow][tableColumn];
+                    count++;
+                }
             }
-            average = (double) total / convertArray[tableRow].length;
-            System.out.printf("%-13s%-12s", total, average);
+
+            System.out.printf("%-13s%-12s", total[count], average);
 //            total = 0;
 //            average = 0;
         }
-
+          return total;
+    }
 
 
     }
-}
+
