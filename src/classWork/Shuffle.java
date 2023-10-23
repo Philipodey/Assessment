@@ -2,10 +2,10 @@ package classWork;
 
 import java.util.Arrays;
 
-public class Shuffle {
+public class  Shuffle {
     public static void main(String[] args) {
         String[] chars = {"A", "M", "C", "W", "I", "T"};
-        System.out.println(Arrays.toString(shuffleOne(3, chars)));
+        System.out.println(Arrays.toString(shuffleOne(chars)));
     }
 //    public static String[] shuffle(int number,String[] array) {
 //        String[] strings = new String[array.length];
@@ -31,7 +31,7 @@ public class Shuffle {
 //}
 
 
-    public static String[] shuffleOne(int number, String[] chars) {
+    public static String[] shuffleOne(String[] chars) {
         String [] newList = new String[chars.length];
         int length = (chars.length/2) - 1;
         int count = 0;

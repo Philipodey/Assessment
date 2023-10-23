@@ -1,5 +1,6 @@
-import org.junit.Test;
+
 import ClassTask.PalindromeAnagram;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,14 +8,18 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PalindromeAnagramTest {
     @Test
     public void testIsPalindrome(){
-        String word = "aba";
-        String secondWord = "aba";
-        boolean expected = PalindromeAnagram.isAnagram(word, secondWord);
+        String word = "lol";
+        boolean expected = PalindromeAnagram.isPalindrome(word);
         assertTrue(expected);
 
     }
     @Test
     public void testIsAnagram(){
-        String word = "aba";
+        String word = "live";
+        String secondWord = "evis";
+        boolean expected = PalindromeAnagram.isAnagram(word,secondWord);
+        assertTrue(expected);
+
+
     }
 }

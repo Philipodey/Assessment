@@ -1,6 +1,7 @@
 package classWork;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
@@ -12,7 +13,7 @@ public class ShuffleTest {
     public void testShuffle(){
         String [] characters = {"A","M","C","W","I","T"};
         String [] strings = {"A","W","M","I","C","T"};
-        String[] result = (Shuffle.shuffleOne(3,characters));
+        String[] result = (Shuffle.shuffleOne(characters));
         assertArrayEquals(result, strings);
 
     }

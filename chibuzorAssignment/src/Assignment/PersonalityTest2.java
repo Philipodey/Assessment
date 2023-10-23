@@ -67,17 +67,17 @@ public class PersonalityTest2 {
         for (int extovert = 0; extovert < 5; extovert++) {
             System.out.println("A." + array[extovert] + "\t\t" + "B." + question[extovert]);
             answer = check.next();
-            if (answer.equalsIgnoreCase("a")) {
+            if (answer.equalsIgnoreCase("a")|| answer.equalsIgnoreCase("A")) {
                 answerBank[0][extovert] = answer +". "+array[extovert];
-            } else if (answer.equalsIgnoreCase("b")) {
+            } else if (answer.equalsIgnoreCase("b")|| answer.equalsIgnoreCase("B")) {
                 answerBank[0][extovert] = answer +". "+question[extovert];
             }
-            while (!answer.equals("a") && !answer.equals("b")) {
+            while (!(answer.equals("a")||answer.equals("A")) && !(answer.equals("b")||answer.equals("B"))) {
                 System.out.println(array[extovert] + "\t\t" + question[extovert]);
                 answer = check.next();
-                if (answer.equalsIgnoreCase("a")) {
+                if (answer.equalsIgnoreCase("a")|| answer.equalsIgnoreCase("A")) {
                     answerBank[0][extovert] = answer +". "+ array[extovert];
-                } else if (answer.equalsIgnoreCase("b")) {
+                } else if (answer.equalsIgnoreCase("b") || answer.equalsIgnoreCase("B")) {
                     answerBank[0][extovert] = answer +". "+question[extovert];
                 }
             }
@@ -86,18 +86,18 @@ public class PersonalityTest2 {
         for (int sensing = 5; sensing < 10; sensing++) {
             System.out.println(array[sensing] + "\t\t" + question[sensing]);
             answer = check.next();
-            if (answer.equalsIgnoreCase("a")) {
+            if (answer.equalsIgnoreCase("a")|| answer.equalsIgnoreCase("A")) {
                 answerBank[1][count] = answer +". "+array[sensing];
-            } else if (answer.equalsIgnoreCase("b")) {
+            } else if (answer.equalsIgnoreCase("b")||answer.equalsIgnoreCase("B")) {
                 answerBank[1][count] = answer +". "+question[sensing];
             }
             count++;
-            while (!answer.equals("a") && !answer.equals("b")) {
+            while (!(answer.equals("a")||answer.equals("A")) && !(answer.equals("b")||answer.equals("B"))) {
                 System.out.println(array[sensing] +". "+"\t\t" + question[sensing]);
                 answer = check.next();
-                if (answer.equalsIgnoreCase("a")) {
+                if (answer.equalsIgnoreCase("a") || answer.equalsIgnoreCase("A")) {
                     answerBank[1][count] = answer +". "+array[sensing];
-                } else if (answer.equalsIgnoreCase("b")) {
+                } else if (answer.equalsIgnoreCase("b") || answer.equalsIgnoreCase("B")) {
                     answerBank[1][count] = answer +". "+question[sensing];
                 }
             }
@@ -106,18 +106,18 @@ public class PersonalityTest2 {
         for (int thinking = 10; thinking < 15; thinking++) {
             System.out.println(array[thinking] + "\t\t" + question[thinking]);
             answer = check.next();
-            if (answer.equalsIgnoreCase("a")) {
+            if (answer.equalsIgnoreCase("a")||answer.equalsIgnoreCase("A")) {
                 answerBank[2][count] = answer +". "+array[thinking];
-            } else if (answer.equalsIgnoreCase("b")) {
+            } else if (answer.equalsIgnoreCase("b")||answer.equalsIgnoreCase("B")) {
                 answerBank[2][count] = answer +". "+question[thinking];
             }
             count++;
-            while (!answer.equals("a") && !answer.equals("b")) {
+            while (!(answer.equals("a")||answer.equals("A")) && !(answer.equals("b")||answer.equals("B"))) {
                 System.out.println(array[thinking] + "\t\t" + question[thinking]);
                 answer = check.nextLine();
-                if (answer.equalsIgnoreCase("a")) {
+                if (answer.equalsIgnoreCase("a")||answer.equalsIgnoreCase("A")) {
                     answerBank[2][count] = answer +". "+array[thinking];
-                } else if (answer.equalsIgnoreCase("b")) {
+                } else if (answer.equalsIgnoreCase("b")||answer.equalsIgnoreCase("B")) {
                     answerBank[2][count] = answer +". "+question[thinking];
                 }
             }
@@ -127,18 +127,18 @@ public class PersonalityTest2 {
         for (int judging = 15; judging < 20; judging++) {
             System.out.println(array[judging] + "\t\t" + question[judging]);
             answer = check.next();
-            if (answer.equalsIgnoreCase("a")) {
+            if (answer.equalsIgnoreCase("a") || answer.equalsIgnoreCase("A")) {
                 answerBank[3][count] = answer +". "+array[judging];
-            } else if (answer.equalsIgnoreCase("b")) {
+            } else if (answer.equalsIgnoreCase("b") || answer.equalsIgnoreCase("B")) {
                 answerBank[3][count] = answer +". "+question[judging];
             }
             count++;
-            while (!answer.equals("a") && !answer.equals("b")) {
+            while (!(answer.equals("a")||answer.equals("A")) && !(answer.equals("b")||answer.equals("B"))){
                 System.out.println(array[judging] + "\t\t" + question[judging]);
                 answer = check.next();
-                if (answer.equalsIgnoreCase("a")) {
+                if (answer.equalsIgnoreCase("a") || answer.equalsIgnoreCase("A")) {
                     answerBank[3][count] = answer +". "+array[judging];
-                } else if (answer.equalsIgnoreCase("b")) {
+                } else if (answer.equalsIgnoreCase("b") || answer.equalsIgnoreCase("B")) {
                     answerBank[3][count] = answer +". "+question[judging];
                 }
             }
@@ -153,7 +153,7 @@ public class PersonalityTest2 {
             for (int j = 0; j < answerBank[i].length; j++) {
                     response = answerBank[i][j];
                     System.out.println(response);
-                    if (response.startsWith("a")) {
+                    if (response.startsWith("a")||response.startsWith("A")) {
                         numberExtrovert++;
                     } else {
                         numberIntrovert++;
@@ -309,7 +309,7 @@ public class PersonalityTest2 {
                                   that offer clear hierarchies and expectations.
                                   
                                   For many Logisticians, a lack of structure offers not freedom, but chaos.
-                                  People with the Logistician personality type rarely hesitate to take responsibility for their actions and choices. Generally speaking, they
+                                  People with the Logisticians personality type rarely hesitate to take responsibility for their actions and choices. Generally speaking, they
                                   are quick to own up to their own mistakes, admitting the truth even if it doesn’t make them look good. To Logisticians, honesty is far more 
                                   important than showmanship, and they’d rather satisfy their own conscience than lie to impress someone else.
                     """);

@@ -1,30 +1,34 @@
 package ClassTask;
 
 public class PalindromeAnagram {
+    public static int characterRange = 300;
     public static boolean isAnagram(String word, String secondWord) {
-        boolean isAnagram = true;
-        String newWord = "";
-        for (int count = 0; count <= word.length(); count++) {
-            newWord = String.valueOf(word.charAt(count));
-            for (int counter = secondWord.length(); counter <= 0; counter++) {
-                if (word.charAt(count) == secondWord.charAt(counter)){
-                    return isAnagram;
-                }
-            }
+        if(word.length() != secondWord.length()){
+            return false;
         }
-        return isAnagram;
+        int[] charCount = new int[characterRange];
+        for (int index = 0; index < word.length(); index++) {
+            charCount[word.charAt(index)]++;
+            charCount[secondWord.charAt(index)]--;
+        }
+        for (int index1 = 0; index1 < word.length(); index1++) {
+           if (charCount[index1] != 0){
+               return false;
+           }
+        }
+        return true;
     }
     public static boolean isPalindrome(String word){
-        String newWord;
-        for (int count = 0; count < word.length(); count++) {
-            for (int counts = word.length(); counts > 0; counts++) {
-                newWord = String.valueOf(word.charAt(counts));
-                System.out.println(newWord);
-                if(newWord.equals(word)){
-                    return true;
-                }
-            }
+        int backWard = word.length() - 1;
+        int forward = 0;
+        while (forward < backWard){
+           if(word.charAt(forward) != word.charAt(backWard)){
+               return false;
+           }
+           forward++;
+           backWard--;
         }
+
         return true;
     }
 

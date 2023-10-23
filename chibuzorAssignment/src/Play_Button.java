@@ -1,7 +1,7 @@
 public class Play_Button {
     public static void main(String[] args) {
-        int first = firstRow(7);
-        int columnFirst = firstColumn(7);
+        int first = firstRow(5);
+        int columnFirst = firstColumn(5);
     }
     public static int firstRow(int number) {
         for (int space = 1; space <= number; space++) {
