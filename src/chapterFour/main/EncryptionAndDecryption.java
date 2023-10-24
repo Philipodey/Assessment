@@ -31,6 +31,7 @@ public class EncryptionAndDecryption {
             newThirdDigit = (thirdDigit + 7) % 10;
             newFourthDigit = (fourthDigit + 7) % 10;
         }
+
         else {
             System.out.println("Invalid number!");
         }

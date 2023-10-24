@@ -8,19 +8,38 @@ public class StudentGradeApp {
     public static void main(String[] args) {
         int[][] elements = elementsInTheArray(2,2);
 
+        ArrayList<Integer> name = getTotalList(elements);
+        ArrayList<Double> average = getAverageList(name,2);
+        ArrayList<String> positionList = addPosition(name);
+//        System.out.println(totalList);
+//        System.out.println(totalList.size());
+
+
+        for (int index1 = 0; index1 < elements.length; index1++) {
+            System.out.printf("%-16s","Student" + (index1 + 1));
+            for (int index2 = 0; index2 < elements[index1].length; index2++) {
+
+                System.out.printf("%-15d",elements[index1][index2]);
+            }
+          System.out.print(totalList.get(index1));
+            System.out.printf("%15s",averageList.get(index1));
+            System.out.printf("%13s", addPositionList.get(index1));
+            System.out.println();
+        }
+
     }
 
     public static int[][] numberOfRowsAndColumns(int numberOfStudents, int numberOfSubjects){
 
     return new int[numberOfStudents][numberOfSubjects];
     }
+    public static int numberOfStudents = 2;
     public static ArrayList<ArrayList<Integer>> elementsInAnArrayList = new ArrayList<ArrayList<Integer>>();
     public static int[][] elementsInTheArray(int numberOfStudent, int numberOfScores){
         Scanner check = new Scanner(System.in);
         String[][] studentGrade = new String[numberOfStudent][numberOfScores];
         int [][] studentsGrade = new int[numberOfStudent][numberOfScores];
         ArrayList<Integer> scores = new ArrayList<>();
-       int [][] array = numberOfRowsAndColumns(numberOfStudent, numberOfScores);
         for (int row = 0; row < numberOfStudent; row++) {
             for (int column = 0; column < numberOfScores; column++) {
                 System.out.println("Entering score for student " + (row +1));
@@ -48,7 +67,7 @@ public class StudentGradeApp {
         System.out.printf("%-14s","AVE");
         System.out.printf("%-13s","POS\n");
         minusDisplay(105);
-        System.out.println(elementsInAnArrayList);
+
 
         return studentsGrade ;
     }
@@ -58,7 +77,7 @@ public class StudentGradeApp {
         for (int count = 0; count< scores.length;count++){
             int total = 0;
             for (int counter = 0; counter < scores[count].length; counter++) {
-                total += counter;
+                total += scores[count][counter];
             }
             totalList.add(total);
         }

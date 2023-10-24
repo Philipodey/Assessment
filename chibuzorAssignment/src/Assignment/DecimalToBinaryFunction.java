@@ -4,7 +4,7 @@ public class DecimalToBinaryFunction {
     public static void main(String[] args) {
         int decimal = binaryToDecimal(100010110);
     }
-    public static void decimalToBinary(int number){
+    public static int decimalToBinary(int number){
        int value = 0;
 
        int[] binary = new int[50];
@@ -12,10 +12,11 @@ public class DecimalToBinaryFunction {
           binary[value++] = number % 2;
           number /= 2;
        }
-
-        for (int index = value -1; index >= 0 ; index--) {
+        int index = value -1;
+        for (; index >= 0 ; index--) {
             System.out.print(binary[index]);
         }
+        return binary[index];
     }
     public static int binaryToDecimal(int number){
         int value = 0;
