@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PalindromeAnagramTest {
     @Test
     public void testIsPalindrome(){
-        String word = "lol";
+        String word = "grace";
         boolean expected = PalindromeAnagram.isPalindrome(word);
         assertTrue(expected);
 

@@ -19,6 +19,7 @@ public class PalindromeAnagram {
         return true;
     }
     public static boolean isPalindrome(String word){
+        word = word.toLowerCase();
         int backWard = word.length() - 1;
         int forward = 0;
         while (forward < backWard){

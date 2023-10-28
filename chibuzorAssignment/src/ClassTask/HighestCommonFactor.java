@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static ClassTask.ArrayTask.*;
+
 public class HighestCommonFactor {
     public static void main(String[] args) {
-       int[] number = primeNumber(50);
+        System.out.println(Arrays.toString(highestCommonFactor(9, 27)));
     }
-    public static int[] highestCommonFactor(int[] numbers){
+    public static int[] highestCommonFactors(int[] numbers){
 //        int factorSave = []
         int[] newNumber = new int [numbers.length];
           int lowest = numbers[0];
@@ -20,7 +22,7 @@ public class HighestCommonFactor {
         }
         return newNumber;
     }
-    public static int[] primeNumber(int number){
+    public static int[] palindromes(int number){
         StringBuilder primes = new StringBuilder();
         int counter = 2;
         while (number != 1) {
@@ -32,18 +34,17 @@ public class HighestCommonFactor {
             else
             counter++;
         }
-        return  convertString(primes);
+        return  convertStringToArray(primes);
 
     }
-    public static int[] convertString(StringBuilder primes){
+    public static int[] convertStringToArray(StringBuilder primes){
         int[] values = new int[primes.length()];
         for(int count = 0; count < primes.length(); count++) {
-            char newValues = primes.charAt(count);
-            values[count] = newValues;
+            values[count] = primes.charAt(count);
         }
         return  values;
     }
-    public static int[] calculateLcmOf(int number){
+    public static int calculateLcmOf(int number){
         ArrayList<Integer> results = new ArrayList<>();
         int divisor = 2;
         while(number > 1){
@@ -56,15 +57,54 @@ public class HighestCommonFactor {
                 divisor++;
             }
         }
-        return convertToArray(results);
+         int[] multiples = convertToArray(results);
+        return largestOf(multiples);
     }
 
-    private static int[] convertToArray(ArrayList<Integer> results) {
+    static int[] convertToArray(ArrayList<Integer> results) {
         int[] result = new int[results.size()];
         for (int count = 0; count < results.size(); count++) {
             result[count] = results.get(count);
         }
         return result;
+    }
+    public static int[] highestCommonFactor(int... numbers){
+        ArrayList<Integer> highestCommonFactor = new ArrayList<>();
+        int counter = 0;
+        int max = largestOf(numbers);
+        for (int count = 2; count < max;) {
+            for (int number: numbers) {
+                if (number % count == 0) {
+                    counter++;
+                }
+            }
+                if (counter == numbers.length) {
+                    highestCommonFactor.add(count);
+                    counter = 0;
+                    divideNumberBaseOnCount(numbers, count);
+                }else {
+                    count++;
+                    counter = 0;
+                }
+        }
+        return convertToArray(highestCommonFactor);
+    }
+
+    private static void divideNumberBaseOnCount(int[] numbers, int count) {
+        for (int number = 0; number < numbers.length; number++){
+            numbers[number] /= count;
+        }
+    }
+
+
+    public static int largestOf(int[] array){
+        int max = array[0];
+        for (int count = 0; count < array.length; count++) {
+            if (array[count] > max){
+                max = array[count];
+            }
+        }
+        return max;
     }
 
 

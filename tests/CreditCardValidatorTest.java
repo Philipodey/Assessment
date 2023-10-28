@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CreditCardValidatorTest {
     @Test
     public void testThatTheNumberIsBetween13And16(){
-        String cardNumber = "37885760184033";
+        String cardNumber = "3788576018403354334554433";
         String expected = CreditCardValidator.creditCardNumber(cardNumber);
         String result = "American Express Card";
         assertEquals(expected, result);
