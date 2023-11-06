@@ -1,5 +1,5 @@
 package chapterSix;
 
 public class PrimeNumberCheck {
-    public static void isPrimeNumber()
+//    public static void isPrimeNumber();
 }

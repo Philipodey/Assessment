@@ -9,19 +9,21 @@ public class PerfectNumber {
         int number = check.nextInt();
         boolean perfectNumber = isPerfect(number);
         System.out.println(perfectNumber);
+        for (int i = 1; i < 1000; i++) {
+            if(isPerfect(i)){
+                System.out.print(i + " ");
+            }
+        }
     }
-    public static boolean isPerfect(int number){
+
+    public static boolean isPerfect(int number) {
         int factors = 0;
 //        int counter = 1;
         int count = 1;
-        for (;count < number;) {
-            if (number % count == 0){
+        for (; count < number; ) {
+            if (number % count == 0) {
                 factors += count;
-                System.out.printf("%d\t",count);
-            }
-//            else {
-//                counter++;
-//            }
+          }
             count++;
 
         }

@@ -8,7 +8,7 @@ import static ClassTask.ArrayTask.*;
 
 public class HighestCommonFactor {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(highestCommonFactor(9, 27)));
+        System.out.println(Arrays.toString(highestCommonFactor(36, 60)));
     }
     public static int[] highestCommonFactors(int[] numbers){
 //        int factorSave = []
