@@ -1,6 +1,6 @@
 package classWork;
 
-public class RemoveDuplicate {
+public class   RemoveDuplicate {
     public static int[] turnDuplicateToZero(int[] numbers){
         for (int count = 0; count < numbers.length; count++) {
             for (int i = count +1; i < numbers.length; i++) {
