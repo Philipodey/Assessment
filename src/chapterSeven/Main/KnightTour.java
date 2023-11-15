@@ -1,4 +1,4 @@
-package chapterSeven;
+package chapterSeven.Main;
 
 public class KnightTour {
 }

@@ -1,7 +1,5 @@
 package chapterSeven.Main;
 
-import chapterSeven.CollegeStudentsGrade;
-
 public class StudentCollegeGradeTest {
     public static void main(String[] args) {
         int[][] studentScore =  {{87, 96, 70},
