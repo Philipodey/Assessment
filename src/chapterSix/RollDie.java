@@ -26,7 +26,7 @@ public class RollDie {
 
         }
         System.out.printf("%-7s%-10s%n","Face","Frequency");
-        System.out.printf("%-7s%-10s%n%-7s%-10s%n%-7s%-10s%n%7s%10s%n%7s%10s%n%-7s%-10s",1,frequency1,2,frequency2,3,frequency3,4,frequency4,5,frequency5,6,frequency6);
+        System.out.printf("%-7s%-10s%n%-7s%-10s%n%-7s%-10s%n%-7s%10s%n%-7s%10s%n%-7s%-10s",1,frequency1,2,frequency2,3,frequency3,4,frequency4,5,frequency5,6,frequency6);
 
     }
 }

@@ -17,7 +17,7 @@ public class GameOfCrap {
         int myPoint = 0;
         Status gameStatus;
 
-        int sumOfDice = rollDice();
+        int sumOfDice =  rollDice();
 
         switch(sumOfDice){
             case SEVEN :
