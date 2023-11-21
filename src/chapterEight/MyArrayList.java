@@ -59,19 +59,20 @@ public class MyArrayList {
     }
     public void add(int index, int element){
 
-        newMyArrayListB = new int[index];
-        int[] newMyArrayListA = new int[myArrayList.length - index];
-           for (int count = 0; count < index; count++) {
-                   newMyArrayListB[count] = myArrayList[count];
-           }
-           for (int count = 0; count < myArrayList.length - index; count++) {
-                newMyArrayListA[count] = myArrayList[count + index];
-           }
-            newMyArrayListB[newMyArrayListB.length - 1] = index;
-            
-
-
-
+        newMyArrayListB = new int[size];
+       int counter = 0;
+        for (int count = 0; count < size; count++) {
+            if (!(count == index))newMyArrayListB[count] = myArrayList[counter];
+            else if (size-1 > count){
+                newMyArrayListB[index] = element;
+                newMyArrayListB[++count] = element;
+            }
+            else{
+                newMyArrayListB[index] = element;
+            }
+            counter++;
+        }
+        myArrayList = newMyArrayListB;
     }
 
     public int set(int index, int element) {
