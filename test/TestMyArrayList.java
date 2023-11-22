@@ -24,9 +24,9 @@ public class TestMyArrayList {
 
         assertTrue(myArrayList.isEmpty());
         int element = 345;
-        boolean add = myArrayList.add(element);
-
-        assertTrue(add);
+        myArrayList.add(element);
+        int result = myArrayList.getElement(0);
+        assertEquals(345, result);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class TestMyArrayList {
         assertTrue(myArrayList.isEmpty());
         int element = 345;
 
-        assertTrue(myArrayList.add(element));
+        assertEquals(354,myArrayList.getElement(0));
         myArrayList.remove(element);
 
         assertTrue(myArrayList.isEmpty());
@@ -46,12 +46,12 @@ public class TestMyArrayList {
 
         assertTrue(myArrayList.isEmpty());
         int element = 345;
-        boolean add = myArrayList.add(element);
-        assertTrue(add);
+        myArrayList.add(element);
+        assertFalse(myArrayList.isEmpty());
         int element2 = 12;
-        boolean add1 = myArrayList.add(element2);
+        myArrayList.add(element2);
         int element3 = 13;
-        boolean add2 = myArrayList.add(element3);
+        myArrayList.add(element3);
         int size = myArrayList.size();
         assertEquals(3, size);
     }
@@ -61,8 +61,7 @@ public class TestMyArrayList {
 
         assertTrue(myArrayList.isEmpty());
         int element = 345;
-        boolean add = myArrayList.add(element);
-        System.out.println(add);
+        myArrayList.add(element);
         boolean contains = myArrayList.contains(element);
         System.out.println(contains);
         assertTrue(contains);
@@ -72,9 +71,9 @@ public class TestMyArrayList {
     public void testGetElement() {
         assertTrue(myArrayList.isEmpty());
         int element = 345;
-        boolean add = myArrayList.add(345);
+        myArrayList.add(345);
         int element1 = 23;
-        boolean add1 = myArrayList.add(23);
+        myArrayList.add(23);
         int index = 1;
         int getElement = myArrayList.getElement(index);
         assertEquals(23, getElement);
@@ -112,18 +111,39 @@ public class TestMyArrayList {
         myArrayList.add(5);
         myArrayList.add(6);
         myArrayList.add(7);
-        boolean remove = myArrayList.remove(7);
-        System.out.println(remove);
+        myArrayList.remove(7);
         int getElement = myArrayList.getElement(0);
         assertEquals(getElement, 5);
     }
+    @Test
+    public void addSpecificIndexes(){
+        assertTrue(myArrayList.isEmpty());
+        myArrayList.add(67);
+        myArrayList.add(23);
+        myArrayList.add(56);
+        myArrayList.add(23);
+        myArrayList.add(2,16);
+        myArrayList.add(0,5);
+        int getElement = myArrayList.getElement(0);
+        int getElement1 = myArrayList.getElement(1);
+        int getElement2 = myArrayList.getElement(2);
+        System.out.println((myArrayList));
+        assertEquals(getElement2, 16);
+        assertEquals(getElement1, 23);
+        assertEquals(getElement, 5);
+    }
+    @Test
+    public void testLastIndexOf(){
+        assertTrue(myArrayList.isEmpty());
+        myArrayList.add(5);
+        myArrayList.add(8);
+        myArrayList.add(6);
+        myArrayList.add(8);
+        myArrayList.add(23);
+        myArrayList.add(5);
+        int element = 8;
+        int lastIndex =  myArrayList.lastIndexOf(element);
+        assertEquals(3, lastIndex);
+    }
+
 }
-//    @Test
-//    public void testLastIndexOf(){
-//        assertTrue(myArrayList.isEmpty());
-//        myArrayList.add(5);
-//        myArrayList.add(8);
-//        int lastIndexOf()
-//    }
-//
-//}

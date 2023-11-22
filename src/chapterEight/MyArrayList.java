@@ -6,7 +6,8 @@ public class MyArrayList {
     private int index;
     private boolean isEmpty = true;
     int[] myArrayList = new int[20];
-    private int[] newMyArrayListB = new int[10];
+
+//    private int[] newMyArrayListB = new int[10];
 
     public boolean isEmpty() {
         if (size == 0) {
@@ -15,23 +16,16 @@ public class MyArrayList {
         return false;
     }
 
-    public boolean add(int element) {
+    public void add(int element) {
         this.element = element;
         myArrayList[size++] = element;
-        return size >= 0;
+
     }
 
-    public boolean remove(int element) {
-        int[] remove = new int[1];
-        this.element = element;
-        for (int i = 0; i < myArrayList.length; i++) {
-            if (myArrayList[i] == element){
-                remove[i] = myArrayList[i];
-                return true;
+    public void remove(int element) {
+        int[] remove = new int[size];
 
-            }
-        }
-        return false;
+
     }
 
     public int size() {
@@ -59,16 +53,17 @@ public class MyArrayList {
     }
     public void add(int index, int element){
 
-        newMyArrayListB = new int[size];
+       int[] newMyArrayListB = new int[myArrayList.length+1];
        int counter = 0;
-        for (int count = 0; count < size; count++) {
-            if (!(count == index))newMyArrayListB[count] = myArrayList[counter];
-            else if (size-1 > count){
-                newMyArrayListB[index] = element;
-                newMyArrayListB[++count] = element;
+        for (int count = 0; count < myArrayList.length; count++) {
+            if (count < index){
+                newMyArrayListB[counter] = myArrayList[count];
             }
-            else{
-                newMyArrayListB[index] = element;
+            else if (count == index){
+                newMyArrayListB[counter] = element;
+            }
+            else {
+                newMyArrayListB[counter] = myArrayList[count];
             }
             counter++;
         }
@@ -91,5 +86,15 @@ public class MyArrayList {
             newMyArrayList[i] = myArrayList[i];
         }
         return newMyArrayList;
+    }
+    public int lastIndexOf(int element) {
+        int lastIndexElement = 0;
+        for (int count = myArrayList.length-1; count > 0; count--) {
+            if (myArrayList[count] == element){
+               return count;
+
+            }
+        }
+        return -1;
     }
 }

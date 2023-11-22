@@ -13,26 +13,24 @@ public class TestMySet {
     @Test
     public void testAddOneElement(){
         assertTrue(mySet.isEmpty());
-        boolean add = mySet.add(12);
-        boolean add1 = mySet.add(12);
-        System.out.println(add1);
-        assertTrue(add);
+        mySet.add(12);
+        mySet.add(12);
+        assertEquals(1, mySet.size());
     }
     @Test
     public void testMultipleElement(){
         assertTrue(mySet.isEmpty());
-        boolean add1 = mySet.add(12);
-        boolean add2 = mySet.add(13);
-        boolean add3 = mySet.add(14);
-        assertTrue(add1);
-        assertTrue(add2);
-        assertTrue(add3);
+        mySet.add(12);
+        mySet.add(13);
+        mySet.add(14);
+        assertFalse(mySet.isEmpty());
+        assertEquals(3, mySet.size());
     }
     @Test
     public void testContains(){
         assertTrue(mySet.isEmpty());
-        boolean add = mySet.add(12);
-        assertTrue(add);
+        mySet.add(12);
+        assertFalse(mySet.isEmpty());
         boolean contains = mySet.contains(14);
         assertFalse(contains);
     }
@@ -40,8 +38,8 @@ public class TestMySet {
     public void testAddAll(){
         assertTrue(mySet.isEmpty());
         int[] elements = {5,6,7,8,9};
-        boolean addAll = mySet.addAll(elements);
-        assertTrue(addAll);
+        mySet.addAll(elements);
+        assertFalse(mySet.isEmpty());
         boolean contains1 = mySet.contains(5);
         boolean contains2 = mySet.contains(6);
         boolean contains3 = mySet.contains(7);
@@ -68,7 +66,7 @@ public class TestMySet {
         mySet.add(34);
         mySet.add(56);
         mySet.add(76);
-        mySet.remove(76);
+//        mySet.remove(76);
 
 
 

@@ -19,7 +19,7 @@ public class DataExtractionTest {
         int startPosition = 2;
         int endPosition = 4;
 //        when
-        int[] result = dataExtraction.extractByRow(dataSet,row, startPosition, endPosition);
+        int[] result = DataExtraction.extractByRow(dataSet,row, startPosition, endPosition);
 
 //        Assert
         assertEquals(60, result[0]);

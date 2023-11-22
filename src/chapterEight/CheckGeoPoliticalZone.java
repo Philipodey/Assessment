@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CheckGeoPoliticalZone {
     public static void main(String[] args) {
-        String states = "Kwaras";
+        String states = "Kwara";
         String state = getGeopoliticalZone(states);
         System.out.println(state);
     }

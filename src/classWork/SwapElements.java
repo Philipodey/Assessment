@@ -44,18 +44,15 @@ public class SwapElements {
         int counter = 0;
         for (int count = 0; count < elements.length; count++) {
             if (elements.length % 2 == 0) {
-                if (count % 2 == 0) {
-                    if (count >= 0 && count < 2) {
-                        element[counter] = elements[count];
-                    } else {
+                if (count % 2 == 0) {if (count >= 0 && count < 2) element[counter] = elements[count];
+                    else {
                         count++;
                         element[counter] = elements[count];
                         count--;
                     }
                 } else {
-                    if (count >= 0 && count < 2) {
-                        element[counter] = elements[counter];
-                    } else {
+                    if (count >= 0 && count < 2) element[counter] = elements[counter];
+                    else {
                         count--;
                         element[counter] = elements[count];
                         count++;
@@ -70,18 +67,15 @@ public class SwapElements {
                     break;
                 }
                 if (count % 2 == 0) {
-                    if (count >= 0 && count <2){
-                        element[counter] = elements[count];
-                    }
+                    if (count >= 0 && count <2) element[counter] = elements[count];
+
                     else {
                         count++;
                         element[counter] = elements[count];
                         count--;
                     }
                 } else {
-                    if (count >= 0 && count < 2){
-                        element[counter] = elements[count];
-                    }
+                    if (count >= 0 && count < 2)element[counter] = elements[count];
                     else {
                         count--;
                         element[counter] = elements[count];
