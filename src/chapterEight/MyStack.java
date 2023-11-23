@@ -30,8 +30,8 @@ public class MyStack<T> {
     }
 
     public void pop() {
-        if (size <= 0) throw new StackUnderFlow("Stack is empty");
-       --size;
+        if (size == 0) {throw new StackUnderFlow("Stack is empty");}
+        --size;
     }
 
     public Object peek() {

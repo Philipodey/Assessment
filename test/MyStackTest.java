@@ -54,8 +54,7 @@ public class MyStackTest {
     @Test
     public void stackCanNotPopAnEmptyStorage(){
         MyStack<Double> myStack = new MyStack<>();
-        myStack.pop();
-        assertThrows(StackUnderFlow.class,  myStack::pop);
+        assertThrows(StackUnderFlow.class, myStack::pop);
     }
     @Test
     public void stackCanPeek(){
