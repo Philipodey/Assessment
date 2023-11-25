@@ -5,6 +5,7 @@ public class Account {
     private String pin;
     private String number;
     private String accountName;
+
     public Account(){
 
     }
@@ -19,6 +20,7 @@ public class Account {
     public Account (String accountNumber, String accountName, String pin){
         this.accountName = accountName;
         number = accountNumber;
+        this.pin = pin;
     }
     public void deposit(double depositAmount) {
         validateAmount(depositAmount);
@@ -51,4 +53,7 @@ public class Account {
     }
 
 
+    public String getAccountNumber() {
+        return number;
+    }
 }
