@@ -40,7 +40,7 @@ public class Entry {
     }
 
     public void setBody(String body) {
-        this.body = body;
+        this.body += body;
     }
     public String toString(){
         return String.format("""

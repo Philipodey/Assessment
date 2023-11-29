@@ -1,4 +1,7 @@
+package chapterEight.main;
+
 import chapterEight.*;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
@@ -17,12 +20,13 @@ public class Diary {
 
 
     public void createEntryFor(String title, String body) {
-            lockDiary();
-//            unlockDiary(this.passWord);
-            sizeOfEntries++;
-            int id = id();
-            Entry entry = new Entry(id, title, body);
-            entries.add(entry);
+            if(!isLocked) {
+                sizeOfEntries++;
+                int id = id();
+                Entry entry = new Entry(id, title.toUpperCase(), body);
+                entries.add(entry);
+                System.out.println(id);
+            }
     }
 
     private void validateUserName(String userName) {
@@ -32,18 +36,9 @@ public class Diary {
     private void validatePassword(String password) {
         if (!password.equals(this.passWord)) throw new InvalidPasswordException("Invalid password try Again!");
     }
-
-    private String createPassword(String passWord) {
-        this.passWord = passWord;
-        return passWord;
-    }
-
-    private String createUserName(String userName) {
-        this.userName = userName;
-        return userName;
-    }
-    public int id(){
-        return entries.size()+1;
+    public int id() {
+        int num = Integer.parseInt(12 + "" + entries.size() + 1);
+        return num;
     }
 
     public int getSizeOfEntries() {
@@ -72,4 +67,19 @@ public class Diary {
             isLocked = false;
         }
     }
+
+    public void updateEntry(int id, String title, String body) {
+       if (!isLocked) {
+           Entry update = findEntryById(id);
+           update.setBody(body);
+           update.setTitle(title);
+       }
+    }
+    public void deleteEntry(int id) {
+        if(!isLocked) {
+                entries.remove(id);
+        }
+    }
+
+
 }

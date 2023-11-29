@@ -1,11 +1,8 @@
 import chapterEight.Entry;
 import chapterEight.InvalidPasswordException;
+import chapterEight.main.Diary;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.testng.annotations.BeforeTest;
-
-import java.util.Arrays;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,12 +12,10 @@ public class DiaryTest {
     public void testFirst(){
         diary = new Diary("philip1234","Happinex123");
         diary.createEntryFor("The lord is good","All the time the lord is good");
-
     }
     @Test
     public void createEntryTest(){
-
-//        System.out.println(diary.findEntryById(1));
+        System.out.println(diary.findEntryById(1201));
         Entry entry = new Entry(diary.id(),"The lord is good", "All the time the lord is good");
         assertEquals("All the time the lord is good",entry.getBody());
     }
@@ -53,5 +48,55 @@ public class DiaryTest {
         diary.createEntryFor("Another Day","It was a sunny day but i was very happy");
         assertEquals(2, diary.getSizeOfEntries());
     }
+    @Test
+    public void updateEntryTest(){
+        diary.unlockDiary("Happinex123");
+        String title = "The lord is making a way for me";
+        String body = """
+                Everything attached to me win
+                It's my winning season
+                Everything attached to me win
+                I win
+                I will because God has already won
+                It's my winning season
+                """;
+        diary.updateEntry(1201, title, body);
+        Entry entry = diary.findEntryById(1201);
+        assertEquals("The lord is making a way for me", entry.getTitle());
+    }
+    @Test
+    public void getIdTest(){
+        String title = "The lord is making a way for me";
+        String body = """
+                Everything attached to me win
+                It's my winning season
+                Everything attached to me win
+                I win
+                I will because God has already won
+                It's my winning season
+                """;
+        Entry entry = diary.findEntryById(1201);
+        assertEquals(1201,entry.getId());
+
+
+    }
+    @Test
+    public void deleteEntryTest(){
+        diary.unlockDiary("Happinex123");
+        String title = "The lord is making a way for me";
+        String body = """
+                Everything attached to me win
+                It's my winning season
+                Everything attached to me win
+                I win
+                I will because God has already won
+                It's my winning season
+                """;
+        diary.deleteEntry(1201);
+        assertEquals(1201, diary.findEntryById(1201));
+
+
+    }
+
 
 }

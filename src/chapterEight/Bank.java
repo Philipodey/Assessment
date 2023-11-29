@@ -14,12 +14,17 @@ public class Bank {
     public Bank(){
 
     }
+    public void returnAllAccount(){
+        for (int i = 0; i < accounts.size(); i++) {
+            System.out.println(accounts.get(i));
+        }
+    }
 
     public Account createAccountFor(String firstName, String lastName, String pin) {
-        totalNumberOfAccount++;
-        String accountNumber = generateAccountNumber();
+        accountNumber = generateAccountNumber();
         name = generateAccountNameFrom(firstName,lastName);
         Account account = new Account(accountNumber,name,pin);
+        totalNumberOfAccount++;
         accounts.add(account);
         return account;
     }
@@ -47,23 +52,27 @@ public class Bank {
     }
 
     public Account findAccount(String accountNumber) {
-        for (Account account: accounts){
-            if (account.getAccountNumber().equals(accountNumber)){
-                return account;
-            }
+//        for (Account account: accounts){
+//            if (account.getAccountNumber().equals(accountNumber)){
+//                return account;
+//            }
+//        }
+
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accountNumber.equals(accounts.get(i).getAccountNumber())) return accounts.get(i);
         }
         throw new NullPointerException("Account Not found");
     }
 
-    public void withdraw(double amount, String accountNumber, String pin) {
+    public void withdraw(double amount, String number, String pin) {
+        accountNumber = number;
         Account account = findAccount(accountNumber);
         account.withdraw(amount, pin);
     }
 
-    public void removeAccount(String accountNumber) {
-        ArrayList <Account> remove = new ArrayList<>();
-        Account findAccount = findAccount(accountNumber);
-        remove.add(findAccount);
+    public void removeAccount(String number) {
+        findAccount(number);
+        accounts.remove(Integer.parseInt(number)-1);
     }
 
     public void transfer(double amount, String senderAccount, String receiverAccount, String pin) {
@@ -72,12 +81,8 @@ public class Bank {
         Account findAccount = findAccount(receiverAccount);
         deposit(amount, receiverAccount);
     }
-//    @Override
-    public String toString(){
-        return String.format("""
-                The name of the account is %s
-                The account number is %s
-                The password is your father 
-                """, name,accountNumber);
+    public void updatePin(String pin){
+        Account account = new Account();
+        account.validatePin(pin);
     }
 }

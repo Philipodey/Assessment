@@ -3,7 +3,7 @@ package chapterEight;
 public class Account {
     private double balance;
     private String pin;
-    private String number;
+    private String accountNumber;
     private String accountName;
 
     public Account(){
@@ -19,7 +19,7 @@ public class Account {
     }
     public Account (String accountNumber, String accountName, String pin){
         this.accountName = accountName;
-        number = accountNumber;
+        this.accountNumber = accountNumber;
         this.pin = pin;
     }
     public void deposit(double depositAmount) {
@@ -48,12 +48,23 @@ public class Account {
         if (withdrawalAmount > balance) throw new InsufficientFundsException("Insufficient funds please enter a valid amount ");
     }
 
-    private void validatePin(String userPin) {
+    public void validatePin(String userPin) {
         if (!userPin.equals(pin)){ throw new InvalidPinException("Invalid pin input Please input valid pin");}
     }
 
 
     public String getAccountNumber() {
-        return number;
+        return this.accountNumber;
+    }
+    @Override
+    public String toString(){
+        return String.format("""
+                %s
+                The name of the account is %s
+                The account number is %s
+                The balance is %s
+                The pin is your father
+                %s
+                """, "=".repeat(25),accountName,accountNumber, balance,"=".repeat(25));
     }
 }
