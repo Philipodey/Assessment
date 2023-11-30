@@ -1,4 +1,4 @@
-package chapterEight;
+package chapterEight.diary;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -42,6 +42,7 @@ public class Entry {
     public void setBody(String body) {
         this.body += body;
     }
+    @Override
     public String toString(){
         return String.format("""
                                                             %s

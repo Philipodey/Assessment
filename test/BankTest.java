@@ -1,10 +1,8 @@
-import chapterEight.Account;
-import chapterEight.Bank;
-import chapterEight.InsufficientFundsException;
-import chapterEight.InvalidAmountException;
-import chapterEight.NullPointerException;
+import chapterEight.bank.Account;
+import chapterEight.bank.Bank;
+import chapterEight.bank.exception.InsufficientFundsException;
+import chapterEight.bank.exception.InvalidAmountException;
 import org.junit.jupiter.api.Test;
-import org.testng.annotations.BeforeTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

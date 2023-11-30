@@ -1,7 +1,8 @@
-package chapterEight.main;
+package chapterEight.diary;
 
-import chapterEight.*;
-import org.junit.jupiter.api.Test;
+import chapterEight.bank.exception.InvalidPasswordException;
+import chapterEight.diary.exception.EntryNotFoundException;
+import chapterEight.diary.exception.InvalidUserNameException;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,10 @@ public class Diary {
         this.userName = userName;
 
         this.passWord = passWord;
+    }
+
+    public Diary() {
+
     }
 
 
@@ -37,7 +42,7 @@ public class Diary {
         if (!password.equals(this.passWord)) throw new InvalidPasswordException("Invalid password try Again!");
     }
     public int id() {
-        int num = Integer.parseInt(12 + "" + entries.size() + 1);
+        int num = Integer.parseInt(12 + "" +( entries.size() + 1));
         return num;
     }
 
@@ -77,9 +82,14 @@ public class Diary {
     }
     public void deleteEntry(int id) {
         if(!isLocked) {
-                entries.remove(id);
+                entries.remove(id-121);
         }
     }
+    public String getUserName() {
+        return userName;
+    }
 
-
+    public String getPassword() {
+        return passWord;
+    }
 }

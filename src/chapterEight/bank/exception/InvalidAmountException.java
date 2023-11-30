@@ -1,4 +1,4 @@
-package chapterEight;
+package chapterEight.bank.exception;
 
 public class InvalidAmountException extends RuntimeException{
     public InvalidAmountException(String message){

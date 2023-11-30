@@ -1,4 +1,6 @@
-package chapterEight;
+package chapterEight.bank;
+
+import chapterEight.bank.exception.NullPointerException;
 
 import java.util.ArrayList;
 

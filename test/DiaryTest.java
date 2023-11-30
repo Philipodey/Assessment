@@ -1,6 +1,7 @@
-import chapterEight.Entry;
-import chapterEight.InvalidPasswordException;
-import chapterEight.main.Diary;
+import chapterEight.diary.Entry;
+import chapterEight.diary.exception.EntryNotFoundException;
+import chapterEight.bank.exception.InvalidPasswordException;
+import chapterEight.diary.Diary;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,7 @@ public class DiaryTest {
     }
     @Test
     public void createEntryTest(){
-        System.out.println(diary.findEntryById(1201));
+        System.out.println(diary.findEntryById(121));
         Entry entry = new Entry(diary.id(),"The lord is good", "All the time the lord is good");
         assertEquals("All the time the lord is good",entry.getBody());
     }
@@ -60,8 +61,8 @@ public class DiaryTest {
                 I will because God has already won
                 It's my winning season
                 """;
-        diary.updateEntry(1201, title, body);
-        Entry entry = diary.findEntryById(1201);
+        diary.updateEntry(121, title, body);
+        Entry entry = diary.findEntryById(121);
         assertEquals("The lord is making a way for me", entry.getTitle());
     }
     @Test
@@ -75,13 +76,13 @@ public class DiaryTest {
                 I will because God has already won
                 It's my winning season
                 """;
-        Entry entry = diary.findEntryById(1201);
-        assertEquals(1201,entry.getId());
+        Entry entry = diary.findEntryById(121);
+        assertEquals(121,entry.getId());
 
 
     }
     @Test
-    public void deleteEntryTest(){
+    public void deleteEntryCheckEntryExceptionTest(){
         diary.unlockDiary("Happinex123");
         String title = "The lord is making a way for me";
         String body = """
@@ -92,11 +93,7 @@ public class DiaryTest {
                 I will because God has already won
                 It's my winning season
                 """;
-        diary.deleteEntry(1201);
-        assertEquals(1201, diary.findEntryById(1201));
-
-
+        diary.deleteEntry(121);
+        assertThrows(EntryNotFoundException.class, ()->diary.findEntryById(121));
     }
-
-
 }

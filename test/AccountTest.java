@@ -1,4 +1,7 @@
-import chapterEight.*;
+import chapterEight.bank.Account;
+import chapterEight.bank.exception.InsufficientFundsException;
+import chapterEight.bank.exception.InvalidAmountException;
+import chapterEight.bank.exception.InvalidPinException;
 import org.junit.jupiter.api.Test;
 import org.testng.annotations.BeforeTest;
 

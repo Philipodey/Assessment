@@ -1,4 +1,8 @@
-package chapterEight;
+package chapterEight.bank;
+
+import chapterEight.bank.exception.InsufficientFundsException;
+import chapterEight.bank.exception.InvalidAmountException;
+import chapterEight.bank.exception.InvalidPinException;
 
 public class Account {
     private double balance;
