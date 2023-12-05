@@ -1,5 +1,5 @@
-import chapterEight.bank.Account;
-import chapterEight.bank.Bank;
+import chapterEight.bank.serverClass.Account;
+import chapterEight.bank.serverClass.Bank;
 import chapterEight.bank.exception.InsufficientFundsException;
 import chapterEight.bank.exception.InvalidAmountException;
 import org.junit.jupiter.api.Test;

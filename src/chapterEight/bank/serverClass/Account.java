@@ -1,4 +1,4 @@
-package chapterEight.bank;
+package chapterEight.bank.serverClass;
 
 import chapterEight.bank.exception.InsufficientFundsException;
 import chapterEight.bank.exception.InvalidAmountException;

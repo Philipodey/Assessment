@@ -1,6 +1,6 @@
 package chapterEight.diary;
 
-import static chapterEight.bank.BankMain.input;
+import static chapterEight.bank.main.BankMain.input;
 
 public class DiaryMain {
     private static Diary myDiary;

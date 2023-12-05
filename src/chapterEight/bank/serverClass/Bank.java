@@ -1,6 +1,7 @@
-package chapterEight.bank;
+package chapterEight.bank.serverClass;
 
 import chapterEight.bank.exception.NullPointerException;
+import chapterEight.bank.serverClass.Account;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ public class Bank {
         name = generateAccountNameFrom(firstName,lastName);
         Account account = new Account(accountNumber,name,pin);
         totalNumberOfAccount++;
-        accounts.add(account);
+         accounts.add(account);
         return account;
     }
 

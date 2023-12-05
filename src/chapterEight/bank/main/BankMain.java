@@ -1,6 +1,6 @@
-package chapterEight.bank;
+package chapterEight.bank.main;
 
-import chapterEight.bank.Bank;
+import chapterEight.bank.serverClass.Bank;
 
 import java.util.Scanner;
 
