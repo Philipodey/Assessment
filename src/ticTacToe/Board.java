@@ -21,7 +21,10 @@ public class Board {
     }
 
     public void playerMoves(Player player, int positionToPlay) {
-        if (positionToPlay == 1){
+        if (positionToPlay < 0 || positionToPlay > 9){
+            throw new InvalidNumberException("Invalid number inputted!!! \nplease input the right number");
+        }
+        else if (positionToPlay == 1){
             boards[0][0] = player.getTicTacSigns();
         }
         else if(positionToPlay == 2){
@@ -39,8 +42,9 @@ public class Board {
         } else if (positionToPlay == 8){
             boards[2][1] = player.getTicTacSigns();
         } else if (positionToPlay == 9){
-            boards[2][2] = player.getTicTacSigns();}
-
+            boards[2][2] = player.getTicTacSigns();
+        }
     }
+
 
 }
