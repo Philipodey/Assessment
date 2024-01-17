@@ -1,6 +1,6 @@
 package chapterSeven.Main;
 
-public class CollegeStudentsGrade {
+public class  CollegeStudentsGrade {
     public String getCourseName() {
         return courseName;
     }

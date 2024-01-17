@@ -6,6 +6,8 @@ import chapterEight.diary.exception.InvalidUserNameException;
 
 import java.util.ArrayList;
 
+//import static chapterEight.diary.main.DiaryMain.entry;
+
 public class Diary {
     private String userName;
     private String passWord;
@@ -42,8 +44,7 @@ public class Diary {
         if (!password.equals(this.passWord)) throw new InvalidPasswordException("Invalid password try Again!");
     }
     public int id() {
-        int num = Integer.parseInt(12 + "" +( entries.size() + 1));
-        return num;
+        return Integer.parseInt(12 + "" +( entries.size() + 1));
     }
 
     public int getSizeOfEntries() {
@@ -74,7 +75,8 @@ public class Diary {
     }
 
     public void updateEntry(int id, String title, String body) {
-       if (!isLocked) {
+
+        if (!isLocked) {
            Entry update = findEntryById(id);
            update.setBody(body);
            update.setTitle(title);

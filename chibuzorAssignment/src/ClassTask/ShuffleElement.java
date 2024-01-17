@@ -4,8 +4,8 @@ public class ShuffleElement {
 
     public static int[] shuffleElement(int[] elements) {
         int[] newArray = new int[elements.length];
-        int elementCompared = 0;
-        int counts = 0;
+//        int elementCompared = 0;
+//        int counts = 0;
         for (int count = 0; count < elements.length; ) {
             int counter;
             for (counter = count+1; counter < elements.length; counter++) {

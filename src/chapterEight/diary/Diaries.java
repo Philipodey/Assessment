@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public class Diaries {
     private ArrayList<Diary> diaries = new ArrayList<>();
     public Diaries(){
+
     }
-    public void add(String username, String password) {
+    public Diary add(String username, String password) {
         Diary diary = new Diary(username, password);
         diaries.add(diary);
+        return diary;
     }
 
     public int getSizeOfDiaries() {
@@ -23,12 +25,12 @@ public class Diaries {
         }
             throw new DiaryNotFoundException("Diary Not Found !");
     }
-    public Diary findByUsername1(String username) {
-        for (int count = 0; count < diaries.size(); count++){
-            if (diaries.get(count).getUserName().equals(username)) return diaries.get(count);
-        }
-            throw new DiaryNotFoundException("Diary Not Found !");
-    }
+//    public Diary findByUsername1(String username) {
+//        for (int count = 0; count < diaries.size(); count++){
+//            if (diaries.get(count).getUserName().equals(username)) return diaries.get(count);
+//        }
+//            throw new DiaryNotFoundException("Diary Not Found !");
+//    }
 
 
     public void delete(String username, String password) {

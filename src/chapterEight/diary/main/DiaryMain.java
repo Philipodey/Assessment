@@ -1,4 +1,7 @@
-package chapterEight.diary;
+package chapterEight.diary.main;
+
+import chapterEight.diary.Diary;
+import chapterEight.diary.Entry;
 
 import static chapterEight.bank.main.BankMain.input;
 
@@ -167,7 +170,7 @@ public class DiaryMain {
                         ENTRY FOUND
                     ========================
                     """);
-            System.out.println(entry);diaryOptions(); }
+            System.out.println(entry.toString());diaryOptions(); }
 
 
     }
@@ -177,8 +180,7 @@ public class DiaryMain {
         while(!identity.matches("\\d+")){
             identity = input("Enter Id: ");
         }
-        int id = Integer.parseInt(identity);
-        return id;
+        return Integer.parseInt(identity);
     }
 
     private static void addEntry() {
