@@ -1,17 +1,18 @@
 package classWork;
 
+import static classWork.NotDuplicatedValue.addNumberThatAreNotZero;
+
 public class   RemoveDuplicate {
     public static int[] turnDuplicateToZero(int[] numbers){
         for (int count = 0; count < numbers.length; count++) {
-            for (int i = count +1; i < numbers.length; i++) {
+            for (int i = 0; i < numbers.length; i ++) {
                 if(numbers[count] == numbers[i]){
                     numbers[i] = 0;
                 }
             }
         }
-        int numberWhichIsNotZero = countDuplicatesTurnedToZero(numbers);
-        int [] value = addNonZeroValuesToList(numberWhichIsNotZero, numbers);
-        return value;
+        int duplicateTurnedToZero = countDuplicatesTurnedToZero(numbers);
+        return addNonZeroValuesToList(duplicateTurnedToZero, numbers);
     }
     public static int countDuplicatesTurnedToZero(int[] numbers){
         int counter = 0;
@@ -33,5 +34,8 @@ public class   RemoveDuplicate {
         }
         return newList;
     }
+
+
+
 
 }

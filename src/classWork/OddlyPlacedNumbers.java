@@ -123,8 +123,8 @@ public class OddlyPlacedNumbers {
         int zeros = countDuplicatesTurnedToZero(numbers);
         int[] nonZeroValues = addNonZeroValuesToList(zeros,numbers);
 //        int[] minMax = new int[2];
-        int min = min(nonZeroValues);
-        int max = max(nonZeroValues);
+        int min = min(numbers);
+        int max = max(numbers);
         return new int[]{min, max};
 
 

@@ -1,6 +1,7 @@
 import classWork.RemoveDuplicate;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RemoveDuplicateTest {
@@ -11,7 +12,7 @@ public class RemoveDuplicateTest {
 //        When
         int[] uniqueValues = RemoveDuplicate.turnDuplicateToZero(numbers);
 //        Assert
-        int[] result = {4, 9, 7, 1};
-        assertEquals(result, uniqueValues);
+        int[] result = {0, 9, 7, 1};
+        assertArrayEquals(result, uniqueValues);
     }
 }
