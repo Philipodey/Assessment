@@ -9,12 +9,12 @@ public class HcfTest {
     public void highestCommonDivisibleTest(){
         int[] input = {8,4,12,2};
         int[] output = {2};
-        assertArrayEquals(output, highestCommonFactor(input));
+        assertArrayEquals(output, highestCommonDivisorInArray(input));
     }
     @Test
     public void highestCommonDivisible2Test(){
         int[] input = {9,18, 9};
         int[] output = {3,3};
-        assertArrayEquals(output, highestCommonFactor(input));
+        assertArrayEquals(output, highestCommonDivisorInArray(input));
     }
 }

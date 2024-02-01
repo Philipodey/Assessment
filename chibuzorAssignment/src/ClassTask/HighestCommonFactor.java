@@ -10,7 +10,18 @@ public class HighestCommonFactor {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(highestCommonFactor(36, 60)));
     }
-
+    public static int[] highestCommonFactors(int[] numbers){
+//        int factorSave = []
+        int[] newNumber = new int [numbers.length];
+          int lowest = numbers[0];
+        for (int count = 0; count < numbers.length; count++) {
+                if(count % numbers[count] == 0){
+                    newNumber = new int[]{count};
+                    System.out.println(Arrays.toString(newNumber));
+                }
+        }
+        return newNumber;
+    }
     public static int[] palindromes(int number){
         StringBuilder primes = new StringBuilder();
         int counter = 2;
