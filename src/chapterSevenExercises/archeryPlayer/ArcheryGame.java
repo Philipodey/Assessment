@@ -8,9 +8,14 @@ public class ArcheryGame {
 
     public ArcheryGame() {
         ArcheryPlayer archeryPlayer = new ArcheryPlayer();
-        for (int[] ints : playerTable) {
-            Arrays.fill(ints, archeryPlayer.playerChances());
-
+//        for (int[] ints : playerTable) {
+//            Arrays.fill(ints, archeryPlayer.playerChances());
+//
+//        }
+        for (int counter = 0; counter < playerTable.length; counter++) {
+            for (int count = 0; count < playerTable[counter].length; count++) {
+                playerTable[counter][count] = archeryPlayer.playerChances();
+            }
         }
 
     }
@@ -45,29 +50,24 @@ public class ArcheryGame {
     }
 
     public void tableHeading(){
-        for (int count = 0; count < 1; count++) {
-            for (int counter = 0; counter < 1; counter++) {
-
-            }
-
-        }
-
+            System.out.printf("%-10s", " ");
+            System.out.printf("%13s", "first chance");
+            System.out.printf("%15s", "second chance");
+            System.out.printf("%14s", "third chance");
+            System.out.printf("%10s", "Total");
+            System.out.println();
         for (int rowHeading = 0; rowHeading < playerTable.length; rowHeading++) {
             System.out.print((rowHeading+1)+ " ");
             int total = 0;
             for (int columnHeading = 0; columnHeading < playerTable[rowHeading].length; columnHeading++) {
-                System.out.print(playerTable[rowHeading][columnHeading]);
+                System.out.printf("%15s",playerTable[rowHeading][columnHeading]);
                 total += playerTable[rowHeading][columnHeading];
 
             }
-            System.out.print(total);
+            System.out.printf("%12s",total);
             System.out.println();
 
         }
-
-    }
-
-    public void setScore(){
 
     }
 
