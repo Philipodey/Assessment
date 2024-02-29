@@ -15,7 +15,7 @@ public class TwoLargestNumber {
                 secondLargest = largest;
                 largest = number;
             }
-            else if(secondLargest > number){
+            else if(largest > number){
                 secondLargest = number;
             }
             if (frequently < count){

@@ -1,4 +1,4 @@
-package tdd;
+package chapterFour;
 
 public class AirConditioner {
     private boolean isOn ;
@@ -13,11 +13,7 @@ public class AirConditioner {
 
     }
     public void toggleOn() {
-        if(!isOn){
-            isOn = true;
-        } else {
-            isOn = false;
-        }
+        isOn = !isOn;
     }
 
     public int increaseTemperature() {
